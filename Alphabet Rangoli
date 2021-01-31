@@ -82,7 +82,7 @@ Method	  Description
 append()	Adds an element at the end of the list
 reverse()	Reverses the order of the list
 join()	  Joins the elements of an iterable to the end of the string
-
+center((length, string)	Returns a centered string
 '''
 
 import string
