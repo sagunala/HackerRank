@@ -70,3 +70,41 @@ e-d-c-b-a-b-c-d-e
 ----e-d-c-d-e----
 ------e-d-e------
 --------e--------
+
+
+*******************************************SOLUTION**********************************************
+
+
+''' 
+The below methods are used in this programming task 
+
+Method	  Description
+append()	Adds an element at the end of the list
+reverse()	Reverses the order of the list
+join()	  Joins the elements of an iterable to the end of the string
+
+'''
+
+import string
+alpha = string.ascii_lowercase
+
+n = int(input())   
+L = []              
+for i in range(n):
+    s = "-".join(alpha[i:n]) 
+    L.append((s[::-1]+s[1:]).center(4*n-3, "-")) # We can also use s.reverse()
+print('\n'.join(L[::-1]+L))
+
+*******************************************OUTPUT*******************************************
+
+5
+--------e--------
+------e-d-e------
+----e-d-c-d-e----
+--e-d-c-b-c-d-e--
+e-d-c-b-a-b-c-d-e
+e-d-c-b-a-b-c-d-e
+--e-d-c-b-c-d-e--
+----e-d-c-d-e----
+------e-d-e------
+--------e--------
