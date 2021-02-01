@@ -1,1 +1,24 @@
 
+*************************SOLUTION***********************def solve(s):
+def solve(s):
+    for i in s.split():
+        s = s.replace(i, i.capitalize())
+    return s
+s = input("Enter input: ")
+print(solve(s))
+
+*************************OUTPUT***********************
+Enter input: There Are 6six Apples
+There Are 6six Apples
+
+*************************METHODS USED***********************
+The replace() method replaces a specified phrase with another specified phrase.
+Ex:
+ print("apple is a fruit".replace("apple","banana")
+ banana is a fruit
+ 
+The split() method splits a string into a list.
+Ex:
+ print("my name is shashi".split())
+ ['my', 'name', 'is', 'shashi']
+ 
