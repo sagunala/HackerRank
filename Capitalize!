@@ -34,7 +34,7 @@ s = input("Enter input: ")
 print(solve(s))
 
 *************************OUTPUT***********************
-Enter input: There Are 6six Apples
+Enter input: there are 6six Apples
 There Are 6six Apples
 
 *************************METHODS USED***********************
