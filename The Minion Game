@@ -1,0 +1,102 @@
+Kevin and Stuart want to play the 'The Minion Game'.
+
+Game Rules
+
+Both players are given the same string, S .
+Both players have to make substrings using the letters of the string  S.
+Stuart has to make words starting with consonants.
+Kevin has to make words starting with vowels.
+The game ends when both players have made all possible substrings.
+
+Scoring
+A player gets +1 point for each occurrence of the substring in the string S.
+
+For Example:
+String  S = BANANA
+Kevin's vowel beginning word = ANA
+Here, ANA occurs twice in BANANA. Hence, Kevin will get 2 Points.
+
+For better understanding, see the image below:
+Your task is to determine the winner of the game and their score.
+
+Input Format
+
+A single line of input containing the string S.
+Note: The string  S will contain only uppercase letters: .
+
+Constraints
+0<len(S)<10**6
+
+Output Format
+
+Print one line: the name of the winner and their score separated by a space.
+
+If the game is a draw, print Draw.
+
+Sample Input
+BANANA
+
+Sample Output
+Stuart 12
+
+Note :
+Vowels are only defined as "AEIOU". In this problem, "Y" is not considered a vowel.
+
+*****************************************************EXPLANATION*****************************************************
+Ex:
+BANANA
+Words(substrings) starts with B
+B, BA, BAN, BANA, BANAN, BANANA        Total = 6
+
+Words(substrings) starting with next letter A
+A, AN, ANA, ANAN, ANANA        Total = 5
+
+Words(substrings) starting with next letter N
+N, NA, NAN, NANA        Total = 4
+
+Words(substrings) starting with next letter A
+A, AN, ANA        Total = 3
+
+Words(substrings) starting with next letter N
+N, NA        Total = 2
+
+Words(substrings) starting with next letter A
+A        Total = 1
+
+Now count the total only with vowels i.e. 5+3+1 = 9
+count the total only with consonants i.e. 6+4+2 = 12
+
+Count of consonants > count of vovwels
+so, Stuart wins with value 12
+
+*****************************************************SOLUTION*****************************************************
+def minion_game(string):
+    # your code goes here
+    length  = len(string)
+    consonant = 0
+    vowel = 0
+    for i in range(length):
+        if string[i].upper() in 'AEIOU':        # just in case if the string is in lower case instead of upper, we have to convert it to upper.
+            vowel = vowel + (length - i)
+        else:
+            consonant = consonant + (length - i)
+    if vowel > consonant:
+        print("Kevin",vowel)
+    elif vowel == consonant:
+        print("Draw")
+    else:
+        print("Stuart",consonant)
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+    
+    
+*****************************************************OUTPUT*****************************************************  
+PromoGReNatE
+Stuart 51
+
+BANANA
+Stuart 12
+
+Equilibrium
+Kevin 39
