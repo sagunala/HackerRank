@@ -1,0 +1,47 @@
+Input Format
+
+The first line contains a single string, s .
+The second line contains an integer, k , the length of each substring.
+
+Sample Input
+
+STDIN       Function
+-----       --------
+AABCAAADA   s = 'AABCAAADA'
+3           k = 3
+
+
+Sample Output
+
+AB
+CA
+AD
+
+********************************************SOLUTION*******************************
+
+def merge_the_tools(string, k):
+    # your code goes here
+    s= len(string)
+    word=[]
+    for i in range(0,s,k):
+        temp = []
+        word=string[i:i+k]
+        for j in word:
+            if j not in temp:
+                temp+=j
+        print("".join(temp))
+        
+*********************************************OUTPUT***********************************
+AABCAAADA
+3
+AB
+CA
+AD
+
+APPLEBANANA
+3
+AP
+LEB
+AN
+NA
+
